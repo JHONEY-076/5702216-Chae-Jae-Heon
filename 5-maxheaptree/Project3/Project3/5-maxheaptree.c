@@ -36,7 +36,7 @@ void InsertMaxHeapTree1(TreeNode* h, element data) {
 
     //힙이 가득찬경우에 출력
     if (h->heap_size >= MAX_SIZE - 1) {
-        printf("힙이 가득 찼습니다!\n");
+        printf("힙이 가득 참\n");
         return;
     }
 
@@ -80,7 +80,7 @@ void InsertMaxHeapTree(TreeNode* h, element data) {
 
     //힙이 가득찬경우에 출력
     if (h->heap_size >= MAX_SIZE - 1) {
-        printf("힙이 가득 찼습니다!\n");
+        printf("힙이 가득 참\n");
         return;
     }
 
@@ -123,7 +123,7 @@ void InsertMaxHeapTree(TreeNode* h, element data) {
 TreeNode* generateMaxHeapTree(int inputData[], int size) {
     TreeNode* heap = create_heap();
     if (heap == NULL) {
-        printf("할당된 메모리가 없습니다.\n");
+        printf("할당된 메모리가 없음.\n");
         exit(1);
     }
     init_heap(heap); // 힙 초기화 
@@ -142,7 +142,7 @@ void delete_heap(TreeNode* h) {
     int count = 0; // 이동 횟수 카운트
 
     if (h->heap_size == 0) { // 힙이 비워있을 경우 
-        printf("힙이 비어 있습니다!\n");
+        printf("힙이 비어 있음\n");
         return;
     }
 
@@ -156,7 +156,7 @@ void delete_heap(TreeNode* h) {
     // 루트 노드에 마지막 노드를 저장한 후 힙 상태 출력
     h->heap[1] = temp;
     count++;
-    display_heap(h); // 마지막 노드를 루트에 저장한 힙상태 출력
+    display_heap(h); 
 
 
 
@@ -191,26 +191,26 @@ void delete_heap(TreeNode* h) {
 
 
 // 힙을 레벨별로 출력하는 함수
-void level_display(TreeNode* h) {
+void level_print(TreeNode* h) {
     if (h->heap_size == 0) {
-        printf("힙이 비어 있습니다.\n");
+        printf("힙이 비어 있음\n");
         return;
     }
 
     int level = 1;
-    int level_node_size = 1; // 현재 레벨의 노드 수
+    int Level_Node_Size = 1; // 현재 레벨의 노드 수
     int index = 1;      // 힙에서 출력할 노드의 인덱스
 
     while (index <= h->heap_size) {
         printf("[%d] ", level);
-        for (int j = 0; j < level_node_size && index <= h->heap_size; j++) { //현재 레벨의 노드의 수와 힙사이즈 만큼 
+        for (int j = 0; j < Level_Node_Size && index <= h->heap_size; j++) { //현재 레벨의 노드의 수와 힙사이즈 만큼 
             //저장된 힙의 인덱스를 출력 해주는 곳!!
             printf("%02d ", h->heap[index].key);
             index++;
         }
         printf("\n");
         level++;
-        level_node_size *= 2; // 다음 레벨의 노드 수는 두 배로 증가 => 완전 이진트리이기 때문에 단말노드를 제외한 레벨별 노드수는 2배씩 증가한다.
+        Level_Node_Size *= 2; // 다음 레벨의 노드 수는 두 배로 증가 => 완전 이진트리이기 때문에 단말노드를 제외한 레벨별 노드수는 2배씩 증가한다.
     }
 }
 
@@ -243,7 +243,7 @@ void runUserInterface(TreeNode* root) {
             break;
 
         case 'p':
-            level_display(root);
+            level_print(root);
             break;
 
         case 'c':
