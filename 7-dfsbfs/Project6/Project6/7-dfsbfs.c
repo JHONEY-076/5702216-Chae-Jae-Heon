@@ -155,54 +155,48 @@ void print_adj_mat(GraphMatType* g) {
         printf("\n");
     }
 }
-
-//인접 행렬로 구성된 그래프에서 DFS로 탐핵하는 함수 
+// 인접 행렬로 구성된 그래프에서 DFS로 탐색하는 함수 
 void DFS_matrix(GraphMatType* g, int start, int target) {
-   
-    int visited[MAX_VERTICES] = { 0 }; // MAX_VERTICES 크기의 배열을 0으로 초기화하여 방문여부를 추적한다.
-    
-    //스택을 초기화 시켜주고 시작할 노드를 푸쉬해준다.
+    int visited[MAX_VERTICES] = { 0 }; // 방문 여부 추적
     Stack s;
     s.top = -1;
     push(&s, start);
     int count = 0; // 방문한 노드 수 카운트
 
-    // 스택이 비어있지 않는 동안 반복
-    while (is_empty_stack(&s)==0) {
-        int vertex = pop(&s); //스택에 들어있는 노드를 팝해준다.
+    while (!is_empty_stack(&s)) {
+        int vertex = pop(&s);
 
-        // 현재 방문하지 않은 노드를 방문처리 해주고 방문한 노드를 카운트 해준다.
-        if (visited[vertex]==0) {
-            visited[vertex] = 1;
-            count++; // 방문한 노드 수 증가
+        // 방문하지 않은 노드라면
+        if (!visited[vertex]) {
+            visited[vertex] = 1; // 방문 처리
+            count++;
             printf("%d ", vertex); // 방문한 노드 출력
-            
-            // 정점과 타겟정점이 같으면 탐색을 종료해준다.
+
             if (vertex == target) {
-                printf("\n탐색 성공:%d \n", target);
+                printf("\n탐색 성공: %d\n", target);
                 printf("방문한 노드 수: %d\n", count);
                 return;
             }
 
-
-            // 현재 노드에서 인접한 노드의 간선이 존재하고, 노드가 아직 방문되지 않은거라면 
-            // 스택에 푸쉬해준다.
-            for (int i = 0; i < g->n; i++) { 
-                if (g->adj_mat[vertex][i] == 1 && visited[i]==0) { 
+            // 현재 노드에서 인접한 노드를 스택에 푸시
+            for (int i = 0; i < g->n; i++) {
+                if (g->adj_mat[vertex][i] == 1 && !visited[i]) {
                     push(&s, i);
                 }
             }
         }
+        else {
+            printf("%d ", vertex); // 이미 방문한 노드에서 백트랙 시 출력
+        }
     }
-    printf("\n타겟 %d 발견하지 못함.\n", target);// 탐색을 다하고 방문할 노드가 없으면 주어지는 출력문
-    printf("방문한 노드 수: %d\n", count); // 방문한 노드 수 출력
+    printf("\n타겟 %d 발견하지 못함.\n", target);
+    printf("방문한 노드 수: %d\n", count);
 }
 
 
 
 // 인접행렬로 구성된 그래프를 BFS로 탐색하는 함수
 void BFS_matrix(GraphMatType* g, int start, int target) {
-
     // 배열을 초기화 시켜 방문여부를 추적하는 곳
     int visited[MAX_VERTICES] = { 0 };
 
@@ -214,34 +208,39 @@ void BFS_matrix(GraphMatType* g, int start, int target) {
     int count = 0; // 방문한 노드 수 카운트
 
     // 큐가 비어 있지 않을때 까지 실행 
-    while (is_empty_queue(&q)==0) {
-        int vertex = dequeue(&q);// 큐에 들어있는 노드를 꺼낸다.
+    while (!is_empty_queue(&q)) {
+        int vertex = dequeue(&q); // 큐에 들어있는 노드를 꺼낸다.
 
-        //현재 방문하지 않은  노드를 방문 처리해주고 방문한 노드 수를 카운트 해준다. 
-        if (visited[vertex]==0) { 
-            visited[vertex] = 1;
+        // 현재 방문하지 않은 노드를 방문 처리해주고 방문한 노드 수를 카운트 해준다. 
+        if (visited[vertex] == 0) {
+            visited[vertex] = 1; // 방문 처리
             count++; // 방문한 노드 수 증가
 
             printf("%d ", vertex); // 방문한 노드 출력
-            
-            //현재 방문한 노드가 타겟 노드와 같으면 탐색 종료  
+
+            // 현재 방문한 노드가 타겟 노드와 같으면 탐색 종료  
             if (vertex == target) {
-                printf("\n탐색 성공:%d \n", target);
+                printf("\n탐색 성공: %d\n", target);
                 printf("방문한 노드 수: %d\n", count);
                 return;
             }
 
-            // 인접노드와 현재 노드가 연결되었는지, 방문노드인지 확인해주면 큐에 다음 탐색 대상으로 설정한다.
+            // 인접 노드와 현재 노드가 연결되었는지, 방문 노드인지 확인해주면 큐에 다음 탐색 대상으로 설정한다.
             for (int i = 0; i < g->n; i++) {
                 if (g->adj_mat[vertex][i] == 1 && !visited[i]) {
                     enqueue(&q, i);
                 }
             }
         }
+        else {
+            // 이미 방문한 노드에서 백트랙 시 출력
+            printf("%d ", vertex);
+        }
     }
     printf("\n타겟 %d 발견하지 못함.\n", target);
     printf("방문한 노드 수: %d\n", count); // 방문한 노드 수 출력
 }
+
 
 //사용자 인터페이스 메뉴 함수
 void runUserInterface(GraphMatType* root) {
