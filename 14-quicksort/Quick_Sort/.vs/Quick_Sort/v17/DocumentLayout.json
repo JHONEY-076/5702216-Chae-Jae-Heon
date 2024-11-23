@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\Quick_Sort\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E95CA091-9432-40D6-9718-171569EDE560}|Quick_Sort\\Quick_Sort.vcxproj|C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\Quick_Sort\\Quick_Sort\\Quick_Sort.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E95CA091-9432-40D6-9718-171569EDE560}|Quick_Sort\\Quick_Sort.vcxproj|solutionrelative:Quick_Sort\\Quick_Sort.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 182,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Quick_Sort.c",
+              "DocumentMoniker": "C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\Quick_Sort\\Quick_Sort\\Quick_Sort.c",
+              "RelativeDocumentMoniker": "Quick_Sort\\Quick_Sort.c",
+              "ToolTip": "C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\Quick_Sort\\Quick_Sort\\Quick_Sort.c",
+              "RelativeToolTip": "Quick_Sort\\Quick_Sort.c",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAHAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-11-23T00:31:22.506Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

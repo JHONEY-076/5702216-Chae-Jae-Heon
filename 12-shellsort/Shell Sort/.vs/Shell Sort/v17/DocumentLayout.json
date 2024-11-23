@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\Shell Sort\\",
+  "WorkspaceRootPath": "C:\\Users\\\uCC44\uC7AC\uD5CC\\OneDrive - \uACC4\uBA85\uB300\uD559\uAD50\\\uBC14\uD0D5 \uD654\uBA74\\5702216-Chae-Jae-Heon\\5702216-Chae-Jae-Heon\\12-shellsort\\Shell Sort\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A7A04BF-7E02-42B2-86DE-2D6C9F996557}|Shell Sort\\Shell Sort.vcxproj|C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\Shell Sort\\Shell Sort\\Shell Sort.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3A7A04BF-7E02-42B2-86DE-2D6C9F996557}|Shell Sort\\Shell Sort.vcxproj|solutionrelative:Shell Sort\\Shell Sort.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\uCC44\uC7AC\uD5CC\\OneDrive - \uACC4\uBA85\uB300\uD559\uAD50\\\uBC14\uD0D5 \uD654\uBA74\\5702216-Chae-Jae-Heon\\5702216-Chae-Jae-Heon\\12-shellsort\\Shell Sort\\Shell Sort\\Shell Sort.vcxproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shell Sort\\Shell Sort.vcxproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\uCC44\uC7AC\uD5CC\\OneDrive - \uACC4\uBA85\uB300\uD559\uAD50\\\uBC14\uD0D5 \uD654\uBA74\\5702216-Chae-Jae-Heon\\5702216-Chae-Jae-Heon\\12-shellsort\\Shell Sort\\Shell Sort\\Shell Sort.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shell Sort\\Shell Sort.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,10 +27,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Shell Sort.vcxproj",
+              "DocumentMoniker": "C:\\Users\\\uCC44\uC7AC\uD5CC\\OneDrive - \uACC4\uBA85\uB300\uD559\uAD50\\\uBC14\uD0D5 \uD654\uBA74\\5702216-Chae-Jae-Heon\\5702216-Chae-Jae-Heon\\12-shellsort\\Shell Sort\\Shell Sort\\Shell Sort.vcxproj",
+              "RelativeDocumentMoniker": "Shell Sort\\Shell Sort.vcxproj",
+              "ToolTip": "C:\\Users\\\uCC44\uC7AC\uD5CC\\OneDrive - \uACC4\uBA85\uB300\uD559\uAD50\\\uBC14\uD0D5 \uD654\uBA74\\5702216-Chae-Jae-Heon\\5702216-Chae-Jae-Heon\\12-shellsort\\Shell Sort\\Shell Sort\\Shell Sort.vcxproj",
+              "RelativeToolTip": "Shell Sort\\Shell Sort.vcxproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000698|",
+              "WhenOpened": "2024-11-19T12:39:43.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Shell Sort.c",
-              "DocumentMoniker": "C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\Shell Sort\\Shell Sort\\Shell Sort.c",
+              "DocumentMoniker": "C:\\Users\\\uCC44\uC7AC\uD5CC\\OneDrive - \uACC4\uBA85\uB300\uD559\uAD50\\\uBC14\uD0D5 \uD654\uBA74\\5702216-Chae-Jae-Heon\\5702216-Chae-Jae-Heon\\12-shellsort\\Shell Sort\\Shell Sort\\Shell Sort.c",
               "RelativeDocumentMoniker": "Shell Sort\\Shell Sort.c",
-              "ToolTip": "C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\Shell Sort\\Shell Sort\\Shell Sort.c",
+              "ToolTip": "C:\\Users\\\uCC44\uC7AC\uD5CC\\OneDrive - \uACC4\uBA85\uB300\uD559\uAD50\\\uBC14\uD0D5 \uD654\uBA74\\5702216-Chae-Jae-Heon\\5702216-Chae-Jae-Heon\\12-shellsort\\Shell Sort\\Shell Sort\\Shell Sort.c",
               "RelativeToolTip": "Shell Sort\\Shell Sort.c",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
