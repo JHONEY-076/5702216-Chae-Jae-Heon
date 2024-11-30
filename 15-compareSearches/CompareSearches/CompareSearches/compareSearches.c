@@ -83,33 +83,39 @@ void getQuickSortCompareCount(int array[]) {
     quickSort(array, 0, SIZE - 1); // 배열 전체에 대해 퀵 정렬 수행
 }
 
-// 이진탐색을 이용해 배열에서 무작위로 생성된 키를 100번 탐색하고 평균 비교 횟수를 구하는 함수
+
+
 double getAverageBinarySearchCompareCount(int array[]) {
     int totalCompare = 0;
-    for (int i = 0; i < 100; i++) { // 이진 탐색을 100번 수행시켜준다.
-        int key = rand() % SIZE; // 0~999 사이의 무작위 키 생성 
+
+    for (int i = 0; i < 100; i++) {  // 이진 탐색을 100번 수행
+        int key = array[rand() % SIZE];  // 배열 내에서 무작위 키 선택
         int low = 0;
         int high = SIZE - 1;
         int compare = 0;
 
-        //이진 탐색 알고리즘 부분 
         while (low <= high) {
-            compare++;// 비교횟수 카운트 
-            int middle = (low + high) / 2; // 중간 인덱스를 계산하는 부분
-            if (array[middle] == key) {// 키를 찾은 경우 
-                break;
+            int middle = (low + high) / 2;  // 중간 인덱스 계산
+            
+
+            if (array[middle] == key) {
+                compare++;  // 중간값 비교 시 카운트
+                break;  // 키를 찾으면 종료
             }
-            else if (key < array[middle]) { //키가 중간 값보다 작은 경우
-                high = middle - 1;//  high를 중간 인덱스 이전으로 옮겨준다.
+            else if (key < array[middle]) {
+                compare++;  // 중간값 비교 시 카운트
+                high = middle - 1;
             }
             else {
-                low = middle + 1; // low를 중간 인덱스 다음으로 옮겨준다.
+                compare++;  // 중간값 비교 시 카운트
+                low = middle + 1;
             }
         }
-        totalCompare += compare; //탐색 종료후 비교횟수 누적
+        totalCompare += compare;  // 탐색 종료 후 비교 횟수 누적
     }
-    return totalCompare / 100.0;
+    return totalCompare / 100.0;  // 평균 비교 횟수 반환
 }
+
 
 int main(int argc, char* argv[]) {
     srand(time(NULL));

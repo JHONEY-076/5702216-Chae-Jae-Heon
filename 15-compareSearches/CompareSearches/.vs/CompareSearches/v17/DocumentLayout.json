@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\CompareSearches\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CDE4770F-150E-4182-9771-A6FEE1CB4534}|CompareSearches\\CompareSearches.vcxproj|C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\CompareSearches\\CompareSearches\\compareSearches.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CDE4770F-150E-4182-9771-A6FEE1CB4534}|CompareSearches\\CompareSearches.vcxproj|solutionrelative:CompareSearches\\compareSearches.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{19057B50-3172-4390-854B-5EFE9B874164}|CompareSearches\\CompareSearches.vcxproj|C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\CompareSearches\\CompareSearches\\compareSearches.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19057B50-3172-4390-854B-5EFE9B874164}|CompareSearches\\CompareSearches.vcxproj|solutionrelative:CompareSearches\\compareSearches.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,12 +13,20 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 182,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{34c7837f-3b3a-449c-bdf0-bdad86cbaf4a}"
             },
             {
               "$type": "Document",
@@ -28,9 +36,9 @@
               "RelativeDocumentMoniker": "CompareSearches\\compareSearches.c",
               "ToolTip": "C:\\Users\\\uCC44\uC7AC\uD5CC\\source\\repos\\CompareSearches\\CompareSearches\\compareSearches.c",
               "RelativeToolTip": "CompareSearches\\compareSearches.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAH4AAAAzAAAA",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAG4AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-11-26T13:09:03.157Z",
+              "WhenOpened": "2024-11-30T02:41:03.906Z",
               "EditorCaption": ""
             }
           ]

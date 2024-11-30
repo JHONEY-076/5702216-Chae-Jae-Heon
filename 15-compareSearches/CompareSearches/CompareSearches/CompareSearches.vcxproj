@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{cde4770f-150e-4182-9771-a6fee1cb4534}</ProjectGuid>
+    <ProjectGuid>{19057b50-3172-4390-854b-5efe9b874164}</ProjectGuid>
     <RootNamespace>CompareSearches</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
