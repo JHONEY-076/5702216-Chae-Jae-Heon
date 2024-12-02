@@ -19,6 +19,9 @@ RESULT
 
 
 ▪ Interpolation Search가 Binary Search보다 적게 비교하는 이유를 설명
+
+
+
 ![image](https://github.com/user-attachments/assets/cb072c87-c09c-4515-964e-47999f3da88a)
 
 이진탐색은 위의 그림과 같이 반식 쪼개면서 배열의 중간 요소를 기준으로 원하는 값을 찾아가는 반면에,
