@@ -2,18 +2,18 @@
 #include <stdlib.h>
 #include <time.h>
 
-// AVL Tree와 BST를 위한 구조체 및 함수 정의
+// AVL Tree와 BST의 구조체 정의
 typedef struct Node {
     int key;
     struct Node* left;
     struct Node* right;
-    int height; // AVL 트리를 위한 높이 정보
+    int height; // AVL 트리 높이 정보
 } Node;
 
 int compareCount = 0; // 비교 횟수
 int searchCount = 0;  // 탐색 횟수
 
-// 유틸리티 함수: 최대값 반환
+// 최댓값을 반환하는 함수
 int maxReturn(int a, int b) {
     if (a > b) {
         return a;
@@ -23,11 +23,13 @@ int maxReturn(int a, int b) {
     }
 }
 
+// 높이를 반환하는 함수
 int getHeight(Node* nptr) {
     if (nptr == (Node*)NULL) return 0;
     else return nptr->height;
 }
 
+// 노드를 생성하는 함수
 Node* createNode(int key) {
     Node* nptr = (Node*)malloc(sizeof(Node));
     nptr->key = key;
@@ -36,6 +38,7 @@ Node* createNode(int key) {
     return nptr;
 }
 
+//오른쪽 회전을 하는 함수
 Node* rotateRight(Node* y) {
     Node* x = y->left;
     Node* T3 = x->right;
@@ -54,6 +57,7 @@ Node* rotateRight(Node* y) {
     return x;
 }
 
+//왼쪽회전을 하는 함수
 Node* rotateLeft(Node* y) {
     Node* x = y->right;
     Node* T2 = x->left;
@@ -71,12 +75,15 @@ Node* rotateLeft(Node* y) {
 
     return x;
 }
-
+//왼쪽서 서브트리의 높이와 오른쪽 서브트리의 높이를 뺀 균형값을 계산하고 반환하는 함수
 int getBalance(Node* nptr) {
     return getHeight(nptr->left) - getHeight(nptr->right);
 }
 
+//새로운 노드를 삽입한뒤 트리의 균형을 확인하고, 불균형이 발생하면 회전 연산을 수행시켜주는 함수
 Node* insertNode_AVL(Node* root, int key) {
+    
+    // 노드 삽입 부분 
     if (root == (Node*)NULL) return createNode(key);
 
     if (root->key > key)
@@ -85,32 +92,42 @@ Node* insertNode_AVL(Node* root, int key) {
         root->right = insertNode_AVL(root->right, key);
     else
         return root;
-
+    
+    //새 노드가 삽입되면 해당노드의 서브트리의 높이가 바뀔수 있으므로 현재 노드의 높이를 갱신시켜준다.
     root->height = 1 + ((getHeight(root->left) > getHeight(root->right))
         ? getHeight(root->left)
         : getHeight(root->right));
 
-    int balance = getBalance(root);
 
+    int balance = getBalance(root);// 균형 확인
+    
+
+    // 불균형 처리 부분 
     if (balance >= 2) {
-        if (getBalance(root->left) >= 0) return rotateRight(root);
+        // LL부분
+        if (getBalance(root->left) >= 0) 
+            return rotateRight(root);
         else {
+            //LR부분 
             root->left = rotateLeft(root->left);
             return rotateRight(root);
         }
     }
     else if (balance <= -2) {
-        if (getBalance(root->right) < 0) return rotateLeft(root);
+        //RR부분
+        if (getBalance(root->right) < 0) 
+            return rotateLeft(root);
         else {
+            //RL부분 
             root->right = rotateRight(root->right);
             return rotateLeft(root);
         }
     }
     else
-        return root;
+        return root; //트리가 불균형하지 않은 경우, 변경된 루트를 반환한다.
 }
 
-//트리에서 최소값 노드 찾기
+//트리에서 최소값 노드를 찾는 함수
 Node* getMinValueNode(Node* node) {
     Node* current = node;
     while (current->left != NULL)
@@ -118,12 +135,16 @@ Node* getMinValueNode(Node* node) {
     return current;
 }
 
+// AVL트리에서 노드를 삭제 한 후 트리의 균형을 유지하도록 하는 함수
 Node* deleteNode_AVL(Node* root, int key) {
+    // 삭제 대상 탐색
     if (root == NULL) return root;
     if (key < root->key)
         root->left = deleteNode_AVL(root->left, key);
     else if (key > root->key)
         root->right = deleteNode_AVL(root->right, key);
+    
+    // 삭제 작업 수행 
     else {
         if ((root->left == NULL) || (root->right == NULL)) {
             Node* temp = root->left ? root->left : root->right;
@@ -136,6 +157,7 @@ Node* deleteNode_AVL(Node* root, int key) {
             }
             free(temp);
         }
+        // 자식이 둘다 없을때는 오른쪽 서브트리의 가장 작은 값을 찾아 해당 값을 현재 노드의 키로 대체하고 오른쪽 서브트리에서 대체된 키값을 삭제!!! 
         else {
             Node* temp = getMinValueNode(root->right);
             root->key = temp->key;
@@ -143,30 +165,33 @@ Node* deleteNode_AVL(Node* root, int key) {
         }
     }
 
+
+    // 재귀적으로 호출된 후, 서브트리의 삭제가 완료되면, 현재 노드의 높이를 갱신시켜준다.
     if (root == NULL) return root;
 
     root->height = 1 + ((getHeight(root->left) > getHeight(root->right))
         ? getHeight(root->left) : getHeight(root->right));
 
+    //균형 확인
     int balance = getBalance(root);
 
     if (balance > 1 && getBalance(root->left) >= 0)
-        return rotateRight(root);
+        return rotateRight(root); //LL부분 
 
     if (balance > 1 && getBalance(root->left) < 0) {
         root->left = rotateLeft(root->left);
-        return rotateRight(root);
+        return rotateRight(root); //LR부분
     }
 
     if (balance < -1 && getBalance(root->right) <= 0)
-        return rotateLeft(root);
+        return rotateLeft(root); // RR부분
 
     if (balance < -1 && getBalance(root->right) > 0) {
         root->right = rotateRight(root->right);
-        return rotateLeft(root);
+        return rotateLeft(root); // RL부분
     }
 
-    return root;
+    return root; // 균형을 유지한 상태로 반환시켜준다.
 }
 
 // BST에 노드 삽입
@@ -187,6 +212,8 @@ Node* insertBST(Node* node, int key) {
 
 // BST에서 노드 삭제
 Node* deleteBST(Node* root, int key) {
+    
+    //삭제 대상 탐색
     if (root == NULL) {
         return root;
     }
@@ -197,18 +224,19 @@ Node* deleteBST(Node* root, int key) {
     else if (key > root->key) {
         root->right = deleteBST(root->right, key);
     }
+    // 삭제 작업수행
     else {
-        if (root->left == NULL) {
+        if (root->left == NULL) {// 왼쪽 자식이 없을 때
             Node* temp = root->right;
             free(root);
             return temp;
         }
-        else if (root->right == NULL) {
+        else if (root->right == NULL) {// 오른쪽  자식이 없을때 
             Node* temp = root->left;
             free(root);
             return temp;
         }
-
+        // 자식이 둘다 없을때는 오른쪽 서브트리의 가장 작은 값을 찾아 해당 값을 현재 노드의 키로 대체하고 오른쪽 서브트리에서 대체된 키값을 삭제!!! 
         Node* temp = getMinValueNode(root->right);
         root->key = temp->key;
         root->right = deleteBST(root->right, temp->key);
@@ -243,7 +271,7 @@ void freeTree(Node* root) {
     }
 }
 
-// AVL Batch 실행
+// AVL Batch 실행 함수 
 void doAVLBatch(Node** root) {
     for (int i = 0; i < 2000; i++) {
         int A = rand() % 3;
@@ -261,7 +289,7 @@ void doAVLBatch(Node** root) {
     }
 }
 
-// BST Batch 실행
+// BST Batch 실행 함수
 void doBinaryBatch(Node** root) {
     for (int i = 0; i < 2000; i++) {
         int A = rand() % 3;
