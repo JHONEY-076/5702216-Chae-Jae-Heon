@@ -35,7 +35,7 @@ https://github.com/JHONEY-076/5702216-Chae-Jae-Heon/blob/master/17-compareAVL/17
 
 ---
 
--결론 =>효율성 측면에서 
+- 결론 =>효율성 측면에서 
 
 -AVL트리는 항상 균형을 유지하여 탐색시 평균 비교 횟수가 적고, 이는 검색 속도가 더 빠름을 의미한다.
 
