@@ -13,7 +13,7 @@ typedef struct Node {
 int compareCount = 0; // ºñ±³ È½¼ö
 int searchCount = 0;  // Å½»ö È½¼ö
 
-// ÃÖ´ñ°ªÀ» ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+// ÃÖ´ñ°ªÀ» ¹İÈ¯ÇÏ´Â ÇÔ¼öaaaaaaaaaa
 int maxReturn(int a, int b) {
     if (a > b) {
         return a;
